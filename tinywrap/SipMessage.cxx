@@ -150,11 +150,6 @@ const tsip_header_t* SipMessage::getSipHeader(const char* name, unsigned index /
 			hdr = (const tsip_header_t*)m_pSipMessage->firstVia;
 			goto bail;
 		}else pos++; }
-    if(tsk_striequals(name, "v") || tsk_striequals(name, "via")){
-        if(index == 1){
-            hdr = (const tsip_header_t*)m_pSipMessage->firstVia;
-            goto bail;
-        }else pos++; }
 	if(tsk_striequals(name, "f") || tsk_striequals(name, "from")){
 		if(index == 0){
 			hdr = (const tsip_header_t*)m_pSipMessage->From;
