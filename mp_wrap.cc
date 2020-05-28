@@ -372,8 +372,7 @@ int MPSipCallback::OnInviteEvent(const InviteEvent* e)
 					pDstUri = const_cast<SipMessage*>(pcMsgLeft)->getSipHeaderValue("t");
 					pHa1 = tsk_strdup(TSIP_HEADER_GET_PARAM_VALUE(pcWrappedMsgLeft->Contact, "ha1"));
 					const char* pcImpi = TSIP_HEADER_GET_PARAM_VALUE(pcWrappedMsgLeft->Contact, "impi");
-                    const char* via = TSIP_HEADER_GET_PARAM_VALUE(pcWrappedMsgLeft->Via);
-                    TSK_DEBUG_ERROR("VIAAA %s", via);
+                    TSK_DEBUG_ERROR("VIAAA %s", pcWrappedMsgLeft->Via);
 
 					if(pcImpi)
 					{
